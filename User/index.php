@@ -32,7 +32,7 @@
 		<div class="right">
 			<h5>Login</h5>
 			<p style ="font-weight:bold;"> Don't have an account? Register Now!!! <a href="/E-commerces/E-Commerce/User/Login/reg.php" style="text-decoration:none; font-weight:bold; font-size:large; cursor:pointer;">Creat Your Account</a></p>
-			<form action = "/E-commerces/E-Commerce/User/Login/Sql/userlog.php" class="form" method="post">
+			<form action = "/User/Login/Sql/userlog.php" class="form" method="post">
 
 
 				<div class="inputs">
@@ -67,5 +67,6 @@
 	
 
 </body>
+
 
 </html>
