@@ -41,7 +41,7 @@ $row = mysqli_fetch_array($table);
 
 	alert('Product Successfully Updated');
 	
-	window.location ='/E-commerces/E-Commerce/admin/Index/view.php';
+	window.location ='/E-Commerce/admin/Index/view.php';
 
 	</script>";
 

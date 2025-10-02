@@ -33,7 +33,7 @@ if(mysqli_num_rows($table)>0){
 
 	alert('Product Already Added');
 
-	window.location ='/E-commerces/E-Commerce/admin/Index/view.php';			
+	window.location ='/E-Commerce/admin/Index/view.php';			
 
 </script>";
 
@@ -52,7 +52,7 @@ if(mysqli_query($conn ,$sql)){
 
 	alert('Product Successfully Added');
 
-	window.location ='/Ecommerces/E-Commerce/admin/Index/view.php';			
+	window.location ='/E-Commerce/admin/Index/view.php';			
 
 </script>";
 

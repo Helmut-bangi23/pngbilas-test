@@ -6,15 +6,9 @@
 
                 
 
-					<a href="#"> <i class="fas fa-angle-down"></i></a> 
+					<div class="col-md-100 col-sm-12 right-top-area d-flex justify-content-end">
+  <a href="/E-Commerce/admin/index.php" class="btn btn-danger">Logout</a>
 
-					<a href="#"><img src="img/user.jfif" alt="..." height="35px" width="35px"></a>
 
-					<a href="#"><i class="fas fa-bell"></i></a>
-
-					<a href="#"><i class="fas fa-dot-circle"></i></a>
-
-					<a href="/E-commerces/E-Commerce/admin/index.php"><i class="fas fa-sign-out-alt"></i></a>
 				</div>
 
-				

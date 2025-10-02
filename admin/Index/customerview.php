@@ -13,7 +13,7 @@ include 'include/top-header.php';
   <div class="row mt-2">
 
     <div class="col-md-12 col-sm-12">
-      <h5 class="pt-4"><a href="/E-commerces/E-Commerce/admin/Index/index.php" style="text-decoration: none; font-weight: bold;">Home</a>
+      <h5 class="pt-4"><a href="/E-Commerce/admin/Index/index.php" style="text-decoration: none; font-weight: bold;">Home</a>
       </h5>
     </div>
   </div>

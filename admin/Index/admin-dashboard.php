@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>PNG Bilas Admin</title>
-    <link rel="icon" href="/E-Commerce/Home/Images/icon/MCS.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <style>
-        /* highlight style for new orders */
-        .new-order {
-            background-color: #fff3cd !important;
-            animation: fadeIn 0.6s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { background-color: #fcf8e3; }
-            to { background-color: #fff3cd; }
-        }
-        .star {
-            color: #ffc107;
-            font-size: 14px;
-        }
-    </style>
-</head>
-
-<body>
-
 <?php
+// admin-dashboard.php
+
 include 'include/sidebar.php';
 include 'include/top-header.php';
 include 'Sql/config.php';
+
+// ====== Dashboard Queries ======
 
 // Total Sales
 $sql_sales = "SELECT SUM(product_price) AS total_sales FROM ordered WHERE status = 'Delivered'";
@@ -57,14 +31,28 @@ $res_deliveries = mysqli_query($conn, $sql_deliveries);
 $row_deliveries = mysqli_fetch_assoc($res_deliveries);
 $total_deliveries = $row_deliveries['total_deliveries'] ?? 0;
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PNG Bilas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
 
 <div class="container-fluid body-area mt-5">
+
+    <!-- Dashboard Stats -->
     <div class="row mt-3">
         <div class="col-md-12 col-sm-12">
-            <h5 class="pt-4 ml-3">Admin Dashboard</h5>
+            <h5 class="pt-4 ml-3">Dashboard</h5>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-3 col-sm-6 card-area mt-3">
             <div class="card">
@@ -134,8 +122,7 @@ $total_deliveries = $row_deliveries['total_deliveries'] ?? 0;
                 </thead>
                 <tbody>
                 <?php
-                // fetch latest 10 orders including created_at
-                $sql = "SELECT ID, customer_name, product_name, product_price, status, Delivery_Date, created_at 
+                $sql = "SELECT ID, customer_name, product_name, product_price, status, Delivery_Date 
                         FROM ordered
                         ORDER BY Delivery_Date DESC 
                         LIMIT 10";
@@ -144,27 +131,19 @@ $total_deliveries = $row_deliveries['total_deliveries'] ?? 0;
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
 
-                        // Determine if it's a new order
-                        $isNew = false;
-                        if ($row['status'] == 'Pending' || strtotime($row['created_at']) > strtotime('-1 day')) {
-                            $isNew = true;
-                        }
-
-                        // Assign highlight class
-                        $rowClass = $isNew ? 'new-order' : '';
-
                         // Status styling
+                        $statusClass = '';
                         if ($row['status'] == "Delivered") {
                             $statusClass = "text-success";
-                        } elseif ($row['status'] == "Pending") {
-                            $statusClass = "text-danger";
                         } elseif ($row['status'] == "Cancelled") {
+                            $statusClass = "text-danger";
+                        } elseif ($row['status'] == "Pending") {
                             $statusClass = "text-warning";
                         } else {
                             $statusClass = "text-muted";
                         }
 
-                        echo "<tr class='{$rowClass}'>
+                        echo "<tr>
                                 <td class='text-muted'>{$row['ID']}</td>
                                 <td>{$row['customer_name']}</td>
                                 <td>{$row['product_name']}</td>
@@ -184,58 +163,7 @@ $total_deliveries = $row_deliveries['total_deliveries'] ?? 0;
                               </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='7' class='text-center text-muted'>No Orders Available</td></tr>";
-                }
-                ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- ✅ Latest Customer Reviews -->
-    <div class="col-md-12 col-sm-12 lower-area mt-5 p-3">
-        <h5>Latest Customer Reviews</h5>
-        <div class="table-responsive mt-3">
-            <table class="table table-bordered table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>#</th>
-                        <th>Customer</th>
-                        <th>Product</th>
-                        <th>Rating</th>
-                        <th>Review</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-                $sql_reviews = "SELECT id, customer_name, product_name, rating, comment, created_at 
-                                FROM reviews 
-                                ORDER BY created_at DESC 
-                                LIMIT 10";
-                $result_reviews = mysqli_query($conn, $sql_reviews);
-
-                if (mysqli_num_rows($result_reviews) > 0) {
-                    while ($rev = mysqli_fetch_assoc($result_reviews)) {
-                        $stars = '';
-                        for ($i = 0; $i < $rev['rating']; $i++) {
-                            $stars .= '<i class="fas fa-star star"></i>';
-                        }
-                        for ($i = $rev['rating']; $i < 5; $i++) {
-                            $stars .= '<i class="far fa-star star"></i>';
-                        }
-
-                        echo "<tr>
-                                <td>{$rev['id']}</td>
-                                <td>{$rev['customer_name']}</td>
-                                <td>{$rev['product_name']}</td>
-                                <td>{$stars}</td>
-                                <td>{$rev['comment']}</td>
-                                <td>" . date('d.m.Y', strtotime($rev['created_at'])) . "</td>
-                              </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='6' class='text-center text-muted'>No Reviews Found</td></tr>";
+                    echo "<tr><td colspan='7' class='text-center text-muted'>No orders found</td></tr>";
                 }
                 ?>
                 </tbody>
@@ -246,6 +174,5 @@ $total_deliveries = $row_deliveries['total_deliveries'] ?? 0;
 </div>
 
 <?php include 'include/footer.php'; ?>
-
 </body>
 </html>

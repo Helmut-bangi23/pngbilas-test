@@ -26,7 +26,7 @@ $row = mysqli_fetch_array($table);
 					<div class="row mt-3">
 
 						<div class="col-md-12 col-sm-12">
-							<h5 class="pt-4"><a href="/E-commerces/E-Commerce/admin/Index/index.php"
+							<h5 class="pt-4"><a href="/E-Commerce/admin/Index/index.php"
 									style="text-decoration: none; font-weight: bold;">Home</a></h5>
 						</div>
 					</div>
@@ -48,7 +48,7 @@ $row = mysqli_fetch_array($table);
 
 
 								<div class="card-body">
-									<form action="/E-commerces/E-Commerce/admin/Index/Sql/p_edit.php"  method="post" enctype="multipart/form-data">
+									<form action="/E-Commerce/admin/Index/Sql/p_edit.php"  method="post" enctype="multipart/form-data">
 										<div class="row p-1">
 
 											<div class="col-md-6 col-sm-12">

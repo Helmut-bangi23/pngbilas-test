@@ -32,7 +32,7 @@ $sql = "SELECT * FROM add_product WHERE ID= '$id'";
 
 	alert('Product Successfully Deleted');
 
-	window.location ='/E-Commerce/admin/Index/view.php';			
+	window.location ='../view.php';			
 
 </script>";
 

@@ -5,7 +5,8 @@
 // servername => localhost
 		// username => root
 		// password => empty
-		// database name => ecommerce
+		// database name => ecommercedb
+		
         
 $conn = mysqli_connect("localhost", "root", "", "ecommercedb");
 		

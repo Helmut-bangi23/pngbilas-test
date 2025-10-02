@@ -19,9 +19,13 @@ function show(){
 		document.getElementById("submenu").style.display = "block";
 		document.getElementById('submenu2').style.display = "none";
 		document.getElementById('submenu3').style.display = "none";
+		document.getElementById('submenu4').style.display = "none";
+		document.getElementById('submenu5').style.display = "none";
 		document.getElementById('drop1').className = "fas fa-angle-down";
 		document.getElementById('drop2').className = "fas fa-angle-right";
 		document.getElementById('drop3').className = "fas fa-angle-right";
+		document.getElementById('drop4').className = "fas fa-angle-right";
+		document.getElementById('drop5').className = "fas fa-angle-right";
 	}
 }
 
@@ -33,9 +37,13 @@ function show1(){
 		document.getElementById('submenu2').style.display = "block";
 		document.getElementById('submenu').style.display = "none";
 		document.getElementById('submenu3').style.display = "none";
+		document.getElementById('submenu4').style.display = "none";
+		document.getElementById('submenu5').style.display = "none";
 		document.getElementById('drop2').className = "fas fa-angle-down";
 		document.getElementById('drop1').className = "fas fa-angle-right";
 		document.getElementById('drop3').className = "fas fa-angle-right";
+		document.getElementById('drop4').className = "fas fa-angle-right";
+		document.getElementById('drop5').className = "fas fa-angle-right";
 	}
 }
 
@@ -48,12 +56,52 @@ function show3(){
 		document.getElementById('submenu3').style.display = "block";
 		document.getElementById("submenu").style.display = "none";
 		document.getElementById('submenu2').style.display = "none";
+		document.getElementById('submenu4').style.display = "none";
+		document.getElementById('submenu5').style.display = "none";
 		document.getElementById('drop3').className = "fas fa-angle-down";
+		document.getElementById('drop4').className = "fas fa-angle-down";
+		document.getElementById('drop5').className = "fas fa-angle-right";
 		document.getElementById('drop1').className = "fas fa-angle-right";
 		document.getElementById('drop2').className = "fas fa-angle-right";
 	}
 }
 
+function show4(){
+	if(document.getElementById('submenu4').style.display == "block"){
+		document.getElementById('submenu4').style.display = "none";
+		document.getElementById('drop4').className = "fas fa-angle-right";
+	}
+	else{
+		document.getElementById('submenu4').style.display = "block";	
+		document.getElementById("submenu3").style.display = "none";
+		document.getElementById('submenu2').style.display = "none";
+		document.getElementById('submenu').style.display = "none";
+		document.getElementById("submenu5").style.display = "none";
+		document.getElementById('drop4').className = "fas fa-angle-down";
+		document.getElementById('drop5').className = "fas fa-angle-right";
+		document.getElementById('drop3').className = "fas fa-angle-down";
+		document.getElementById('drop2').className = "fas fa-angle-right";
+		document.getElementById('drop1').className = "fas fa-angle-right";
+	}
+}
+function show5(){
+	if(document.getElementById('submenu5').style.display == "block"){
+		document.getElementById('submenu5').style.display = "none";
+		document.getElementById('drop5').className = "fas fa-angle-right";
+	}
+	else{
+		document.getElementById('submenu5').style.display = "block";	
+		document.getElementById("submenu4").style.display = "none";
+		document.getElementById('submenu3').style.display = "none";
+		document.getElementById('submenu2').style.display = "none";
+		document.getElementById("submenu").style.display = "none";
+		document.getElementById('drop5').className = "fas fa-angle-down";
+		document.getElementById('drop4').className = "fas fa-angle-right";
+		document.getElementById('drop3').className = "fas fa-angle-down";
+		document.getElementById('drop2').className = "fas fa-angle-right";
+		document.getElementById('drop1').className = "fas fa-angle-right";
+	}
+}
 
 	
 

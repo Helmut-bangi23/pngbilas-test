@@ -1,13 +1,14 @@
 <?php
 
+
 include 'include/header.php';
 include 'include/sidebar.php';
 include 'include/top-header.php';
 
+
+
+
 ?>
-
-
-
 
 				<div class="container-fluid body-area mt-5">
 
@@ -36,7 +37,7 @@ include 'include/top-header.php';
 
 
 								<div class="card-body">
-									<form action="./Sql/p_add.php" method="post" enctype="multipart/form-data">
+									<form action="Sql/p_add.php" method="post" enctype="multipart/form-data">
 										<div class="row p-1">
 
 											<div class="col-md-6 col-sm-12">
