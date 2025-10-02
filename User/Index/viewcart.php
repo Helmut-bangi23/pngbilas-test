@@ -16,13 +16,13 @@ include 'include/navbar.php';
   <div class="row mt-4">
 
     <div class="col-md-10 col-sm-12 mt-1">
-      <h5 class="pt-2 ml-2"><a href="/E-commerces/E-Commerce/User/Index/index.php"
-          style="text-decoration: none; font-weight: bold;">Home</a>
+      <h5 class="pt-2 ml-2"><a href="/E-Commerce/User/Index/index.php"
+          style="text-decoration: none; font-weight: bold;">Choose your favourite item</a>
       </h5>
     </div>
 
     <div class="col-md-2 col-sm-12">
-      <h5 class="pt-2"><a href="/E-commerces/E-Commerce/User/Index/vieworder.php" class="btn btn-success">Go to my orders</a>
+      <h5 class="pt-2"><a href="/E-Commerce/User/Index/vieworder.php" class="btn btn-success">Orders</a>
       </h5>
     </div>
 
@@ -91,11 +91,11 @@ include 'include/navbar.php';
                   <?php echo $row['product_name'];?>
                 </td>
                 <td>
-                  Rs.
+                  $.
                   <?php echo $row['product_price'];?>
                 </td>
                 <td style="text-align:center;">
-                  <img src="/E-commerces/E-Commerce/admin/index/img/uploads/<?php echo $row['product_image'];?>"
+                  <img src="/E-Commerce/admin/index/img/uploads/<?php echo $row['product_image'];?>"
                     class="img-thumbnail mr-5 ml-1" height="50px" width="50px" id="pimg"></td>
 
                 <td>
@@ -145,7 +145,7 @@ include 'include/navbar.php';
     <div class="col-md-10 col-sm-12 mb-3">
 
       <h5>Total Price:</h5>
-      <p> Rs.
+      <p> $.
         <?php
 include 'Sql/config.php';
 
@@ -166,7 +166,7 @@ while($row = mysqli_fetch_array($results)){
 
 
     <div class="col-md-2 col-sm-12 mb-3 mt-2">
-      <a href="/E-commerces/E-Commerce/User/Index/checkout.php" class="btn btn-primary">Proceed to checkout</a>
+      <a href="/E-Commerce/User/Index/checkout.php" class="btn btn-primary">Proceed to checkout</a>
     </div>
 
   </div>

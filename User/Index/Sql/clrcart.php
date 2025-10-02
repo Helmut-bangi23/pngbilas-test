@@ -24,7 +24,7 @@
 	<script>
 
 	alert('Cart Successfully Cleared');
-	window.location ='/E-commerces/E-Commerce/User/Index/viewcart.php';			
+	window.location ='/E-Commerce/User/Index/viewcart.php';			
 
 </script>";
 

@@ -27,7 +27,7 @@ if(mysqli_num_rows($table)>0){
       <script>
 	  
 	  alert( 'product already added to cart!');
-	  window.location ='/E-commerces/E-Commerce/User/Index/viewcart.php';		
+	  window.location ='./viewcart.php';		
 	  </script>";
 	 
    }
@@ -52,7 +52,7 @@ if(mysqli_query($conn ,$sql)){
 	alert('Product Added to Cart');
 	
 
-	window.location ='/E-commerces/E-Commerce/User/Index/viewcart.php';			
+	window.location ='/E-Commerce/User/Index/viewcart.php';			
 
 </script>";
 

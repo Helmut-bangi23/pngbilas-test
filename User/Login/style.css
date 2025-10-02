@@ -45,7 +45,7 @@ body {
   color: #FFFFFF;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("img/uploads/p1.jpg")/**("https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")**/;
+  background-image: url("../Index/img/uploads/p1.jpg");/**("https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")**/
   overflow: hidden;
 }
 .box-form .left .overlay {
@@ -190,3 +190,4 @@ label span.text-checkbox {
 label input[type="checkbox"] {
   display: none;
 }
+

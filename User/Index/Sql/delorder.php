@@ -33,7 +33,7 @@ $sql = "SELECT * FROM ordered WHERE ID= '$id'";
 
 	alert('Order Successfully Cancelled');
 	
-	window.location ='/E-commerces/E-Commerce/User/Index/vieworder.php';			
+	window.location ='/E-Commerce/User/Index/vieworder.php';			
 
 </script>";
 

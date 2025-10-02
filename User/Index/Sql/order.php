@@ -39,7 +39,7 @@ if(mysqli_query($conn,$sql)){
 <script>
 
 alert('Successfully ordered');
-window.location ='/E-commerces/E-Commerce/User/Index/vieworder.php';			
+window.location ='/E-Commerce/User/Index/vieworder.php';			
 
 </script>";
 

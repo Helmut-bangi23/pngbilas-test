@@ -16,7 +16,7 @@ include 'include/navbar.php';
   <div class="row mt-3">
 
     <div class="col-md-12 col-sm-12">
-      <h5 class="pt-2 ml-2"><a href="E-commerces/E-Commerce/User/Index/index.php"
+      <h5 class="pt-2 ml-2"><a href="/E-Commerce/User/Index/index.php"
           style="text-decoration: none; font-weight: bold;">Home</a>
       </h5>
     </div>
@@ -73,6 +73,7 @@ include 'include/navbar.php';
             ?>
               <?php
 
+            
             $sql = "SELECT * FROM ordered";
 
             $table = mysqli_query($conn, $sql);
@@ -100,10 +101,10 @@ include 'include/navbar.php';
                   <?php echo $row['product_name'];?>
                 </td>
                 <td>
-                  Rs.
+                  K.
                   <?php echo $row['product_price'];?>
                 </td>
-                <td style="text-align:center;"><img src="img/uploads/<?php echo $row['product_image'];?>"
+                <td style="text-align:center;"><img src="/E-Commerce/admin/index/img/uploads/<?php echo $row['product_image'];?>"
                     class="img-thumbnail mr-5 ml-1" height="50px" width="50px" id="pimg"></td>
 
                 

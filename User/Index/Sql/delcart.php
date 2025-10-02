@@ -33,7 +33,7 @@ $sql = "SELECT * FROM cart WHERE ID= '$id'";
 
 	alert('Product Successfully Deleted');
 	
-	window.location ='/E-commerces/E-Commerce/User/Index/viewcart.php';			
+	window.location ='/E-Commerce/User/Index/viewcart.php';			
 
 </script>";
 
